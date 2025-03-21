@@ -1,113 +1,141 @@
 <ion-app>
   <ion-tabs>
-      <ion-tab tab="auditions">
-          <ion-header>
-              <ion-toolbar>
-                  <ion-title>Auditions</ion-title>
-              </ion-toolbar>
-          </ion-header>
-          <ion-content>
-              <ion-segment value="all">
-                  <ion-segment-button value="all">All</ion-segment-button>
-                  <ion-segment-button value="upcoming">Upcoming</ion-segment-button>
-                  <ion-segment-button value="ongoing">Ongoing</ion-segment-button>
-                  <ion-segment-button value="finished">Finished</ion-segment-button>
-              </ion-segment>
-              
-              <ion-list>
-                  <ion-card>
-                      <img src="../../assets/image1.avif" alt="Summer Audition">
-                      <ion-card-header>
-                          <ion-chip color="success" >Available</ion-chip>
-                          <ion-card-title>Summer Season Audition</ion-card-title>
-                      </ion-card-header>
-                  </ion-card>
-                  
-                  <ion-card>
-                      <img src="../../assets/image4.avif" alt="Winter Audition">
-                      <ion-card-header>
-                          <ion-chip color="warning">Ongoing</ion-chip>
-                          <ion-card-title>Winter Season Audition</ion-card-title>
-                      </ion-card-header>
-                  </ion-card>
-                  
-                  <ion-card>
-                      <img src="../../assets/image3.avif" alt="Past Audition">
-                      <ion-card-header>
-                          <ion-chip color="tertiary">Finished</ion-chip>
-                          <ion-card-title>Past Audition</ion-card-title>
-                      </ion-card-header>
-                  </ion-card>
+    <ion-tab tab="auditions">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Auditions</ion-title>
+        </ion-toolbar>
+        <ion-toolbar>
+          <div class="header-info">
+            <div class="vpoints">
+              <div class="points-category">
+                <span>My VPoints</span>
+                <ion-icon name="information-circle" color="primary"></ion-icon>
+              </div>
 
-                  <ion-card>
-                    <img src="../../assets/image5.avif" alt="Past Audition">
-                    <ion-card-header>
-                        <ion-chip color="tertiary">Finished</ion-chip>
-                        <ion-card-title>Past Audition</ion-card-title>
-                    </ion-card-header>
-                </ion-card>
+              <div class="point-amount">
+                <span>100</span>
+                <ion-icon name="checkmark-circle" color="warning"></ion-icon>
+              </div>
+            </div>
+            <div class="earn-vpoints">
+              <span>Earn Vpoints</span>
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </div>
+          </div>
 
-                <ion-card>
-                  <img src="../../assets/image2.avif" alt="Past Audition">
-                  <ion-card-header>
-                      <ion-chip color="tertiary">Finished</ion-chip>
-                      <ion-card-title>Past Audition</ion-card-title>
-                  </ion-card-header>
-              </ion-card>
-              </ion-list>
-          </ion-content>
-      </ion-tab>
+        </ion-toolbar>
+        <ion-toolbar>
+          <ion-segment value="all" [(ngModel)]="selectedSegment" slot="start">
+            <ion-segment-button value="all">All</ion-segment-button>
+          </ion-segment>
+          <ion-segment value="all" slot="end">
+            <ion-segment-button value="upcoming">Upcoming</ion-segment-button>
+            <ion-segment-button value="ongoing">Ongoing</ion-segment-button>
+            <ion-segment-button value="finished">Finished</ion-segment-button>
+          </ion-segment>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-card>
+            <div class="gradient-container">
+              <img src="../../assets/image1.avif" alt="Past Audition">
+            </div>
+            <ion-card-header>
+              <ion-chip color="success">Available</ion-chip>
+              <ion-card-title>Summer Season Audition</ion-card-title>
+            </ion-card-header>
+          </ion-card>
 
-      <ion-tab tab="shop">
-          <ion-header>
-              <ion-toolbar>
-                  <ion-title>Shop</ion-title>
-              </ion-toolbar>
-          </ion-header>
-          <ion-content>
-              <p>Shop content goes here...</p>
-          </ion-content>
-      </ion-tab>
+          <ion-card>
+            <img src="../../assets/image4.avif" alt="Winter Audition">
+            <ion-card-header>
+              <ion-chip color="warning">Ongoing</ion-chip>
+              <ion-card-title>Winter Season Audition</ion-card-title>
+            </ion-card-header>
+          </ion-card>
 
-      <ion-tab tab="orders">
-          <ion-header>
-              <ion-toolbar>
-                  <ion-title>Orders Record</ion-title>
-              </ion-toolbar>
-          </ion-header>
-          <ion-content>
-              <p>Orders record content goes here...</p>
-          </ion-content>
-      </ion-tab>
+          <ion-card>
+            <img src="../../assets/image3.avif" alt="Past Audition">
+            <ion-card-header>
+              <ion-chip color="tertiary">Finished</ion-chip>
+              <ion-card-title>Past Audition</ion-card-title>
+            </ion-card-header>
+          </ion-card>
 
-      <ion-tab tab="profile">
-          <ion-header>
-              <ion-toolbar>
-                  <ion-title>Profile</ion-title>
-              </ion-toolbar>
-          </ion-header>
-          <ion-content>
-              <p>Profile content goes here...</p>
-          </ion-content>
-      </ion-tab>
-      
-      <ion-tab-bar slot="bottom">
-          <ion-tab-button tab="auditions">
-              <ion-icon name="musical-notes"></ion-icon>
-              <ion-label>Auditions</ion-label>
-          </ion-tab-button>
-          <ion-tab-button tab="shop">
-              <ion-icon name="cart"></ion-icon>
-              <ion-label>Shop</ion-label>
-          </ion-tab-button>
-          <ion-tab-button tab="orders">
-              <ion-icon name="receipt"></ion-icon>
-              <ion-label>Orders</ion-label>
-          </ion-tab-button>
-          <ion-tab-button tab="profile">
-              <ion-icon name="person"></ion-icon>
-              <ion-label>Profile</ion-label>
-          </ion-tab-button>
-      </ion-tab-bar>
+          <ion-card>
+            <div class="gradient-container">
+              <img src="../../assets/image5.avif" alt="Past Audition">
+            </div>
+            
+            <ion-card-header>
+              <ion-chip color="tertiary">Finished</ion-chip>
+              <ion-card-title>Past Audition</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+
+          <ion-card>
+            <img src="../../assets/image2.avif" alt="Past Audition">
+            <ion-card-header>
+              <ion-chip color="tertiary">Finished</ion-chip>
+              <ion-card-title>Past Audition</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-list>
+      </ion-content>
+    </ion-tab>
+
+    <ion-tab tab="shop">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Shop</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <p>Shop content goes here...</p>
+      </ion-content>
+    </ion-tab>
+
+    <ion-tab tab="orders">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Orders Record</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <p>Orders record content goes here...</p>
+      </ion-content>
+    </ion-tab>
+
+    <ion-tab tab="profile">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Profile</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <p>Profile content goes here...</p>
+      </ion-content>
+    </ion-tab>
+
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="auditions">
+        <ion-icon name="musical-notes"></ion-icon>
+        <ion-label>Auditions</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="shop">
+        <ion-icon name="cart"></ion-icon>
+        <ion-label>Shop</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="orders">
+        <ion-icon name="receipt"></ion-icon>
+        <ion-label>Orders</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="profile">
+        <ion-icon name="person"></ion-icon>
+        <ion-label>Profile</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
   </ion-tabs>
 </ion-app>
